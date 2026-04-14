@@ -74,20 +74,20 @@ END AS is_suspicious
 ```
 
 
-📊 Dashboard Highlights
+## 📊 Dashboard Highlights
 
--> Total Transactions
--> Total Transaction Amount
--> Suspicious vs Normal Transactions
--> Transactions by Location
+- Total Transactions
+- Total Transaction Amount
+- Suspicious vs Normal Transactions
+- Transactions by Location
 
-📈 Key Insights
--> Processed 500+ transactions
--> ~48% transactions flagged as suspicious
--> Chennai and Delhi have highest transaction volume
--> Total transaction volume ≈ ₹25M
+## 📈 Key Insights
+- Processed 500+ transactions
+- ~48% transactions flagged as suspicious
+- Chennai and Delhi have highest transaction volume
+- Total transaction volume ≈ ₹25M
 
-🚀 How to Run the Project
+## 🚀 How to Run the Project
 
 1. Clone the Repository
 git clone https://github.com/AyushTyagi09/Fraud-Detection-Dashboard.git
