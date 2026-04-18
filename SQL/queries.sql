@@ -1,29 +1,16 @@
-# Step 1: Create Database
-CREATE DATABASE fraud_db;
-USE fraud_db;
+-- Total transactions
+SELECT COUNT(*) AS total_transactions FROM processed_transactions;
 
-# Step 2: Create Table
-CREATE TABLE transactions (
-    transaction_id INT,
-    user_id INT,
-    amount INT,
-    location VARCHAR(50),
-    timestamp DATETIME
-);
+-- Total fraud cases
+SELECT COUNT(*) AS total_fraud FROM fraud_alerts;
 
-# STEP 3: Import CSV
+-- Fraud rate
+SELECT 
+    (SELECT COUNT(*) FROM fraud_alerts) * 100.0 /
+    (SELECT COUNT(*) FROM processed_transactions) AS fraud_rate;
 
-# Step 4: Verify Data
-SELECT COUNT(*) FROM transactions;
-
-# STEP 5: Create Fraud Table
-CREATE TABLE fraud_results AS
-SELECT *,
-    CASE 
-        WHEN amount > 50000 THEN 1
-        ELSE 0
-    END AS is_suspicious
-FROM transactions;
-
-# Verify Final Data
-SELECT COUNT(*) FROM fraud_results;
+-- High risk transactions
+SELECT *
+FROM processed_transactions
+ORDER BY risk_score DESC
+LIMIT 10;
