@@ -1,0 +1,7 @@
+Data/raw/creditcard.csv
+Data/transactions.db
+logs/
+__pycache__/
+*.pyc
+*.db
+*.pbix
